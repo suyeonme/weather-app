@@ -3,21 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Weather</title>
 </head>
 <body>
     <div class="location">
         <h1 class="location__timezone">Timezone</h1>
-        <p>Icon</p>
+<!--         <div class="temperature__description">It is so hot</div> -->
     </div>
 
     <div class="temperature">
+        <div class="temperature__container">
+            <div class="temperature__icon">
+                <img class="icon" src="" alt="Weather icon">
+            </div>
+            <div class="temperature__description">
+                It is so hot
+            </div>
+        </div>
         <div class="degree-container">
             <h2 class="temperature__degree">32</h2>
-            <span>F</span>
+            <span class="temperature__unit">&#8451;</span>
         </div>
-        <div class="temperature__description">It is so hot</div>
+    </div>
+
+    <div class="weather-info">
+            <p>Wind Speed<span>4.1 m/s</span></p>
+            <p>Sunrise<span>5:50 AM</span></p>
+            <p>Sunset<span>6:30 PM</span></p>
+            <p>Humidity<span>51%</span></p>
     </div>
     
     <script src="app.js"></script>
