@@ -10,6 +10,9 @@ const DOMstring = {
     sunrise: document.querySelector('.weather-info__sunrise'),
     sunset: document.querySelector('.weather-info__sunset'),
     humidity: document.querySelector('.weather-info__humidity'),
+
+    widget: document.querySelector('.widget'),
+    loader: document.querySelector('.preloader')
 };
 
 class Weather {
@@ -36,7 +39,6 @@ class Weather {
             this.humidity = res.main.humidity;
             this.sunrise = this.getLocalTime(res.sys.sunrise);
             this.sunset = this.getLocalTime(res.sys.sunset);
-            console.log(res);
         } catch (error) {
             console.log(error);
         }
@@ -70,6 +72,13 @@ window.addEventListener('load', () => {
 
                 // INSERT WEATHER DATA
                 weather.renderData();
+
+                // Remove Loader
+                DOMstring.loader.style.visibility = 'hidden';
+
+                // Display UI
+                DOMstring.widget.style.visibility = 'visible';
+
             } catch (error) {
                 console.log(error)
             }
