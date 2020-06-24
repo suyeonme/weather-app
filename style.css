@@ -11,12 +11,60 @@ body {
     font-size: 62.5%;
     color: black;
     background: white;
+    transition: background .2s linear;
 }
 
-/* Widget */
+/****** DARK MODE ******/
+body.dark {
+    background-color: #292C35;
+    color: white;
+}
+
+body.dark .weather-info span {
+    color: #a0a0a0;
+}
+
+.dark-mode {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.dark-mode__label {   
+    display: block;
+    position: relative;
+    background-color: black;
+    border-radius: 5rem;
+    height: 2rem;
+    width: 4rem;
+}
+
+.dark-mode__checkbox {
+    position: absolute;
+    opacity: 0;
+}
+
+.dark-mode__checkbox:checked + .dark-mode__label .dark-mode__ball {
+    transform: translateX(1.95rem);
+}
+
+.dark-mode__ball {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background-color: white;
+    border-radius: 50%;
+    width: 1.8rem;
+    height: 1.8rem;
+    transition: transform .2s linear;
+}
+
+/****** WIDGET ******/
 .widget {
     visibility: hidden;
+    width: 100%;
     height: 100vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,7 +144,7 @@ body {
     margin-top: 1rem;
 }
 
-/* Loader */
+/****** LOADER ******/
 @import "compass/css3";
 body {
     background: #efefef;
@@ -165,7 +213,7 @@ path {
     }
 }
 
-/* Rain */
+/****** RAIN OF LOADER ******/
 .rain {
     position: absolute;
     width: 70px;
@@ -229,6 +277,17 @@ path {
     animation-delay: -1300ms;
 }
 
+.text {
+    font-family: Helvetica, 'Helvetica Neue', sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-left: -43px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 11px;
+    color: #a0a0a0;
+    width: 200px;
+}
 
 @keyframes drop {
     50% {
@@ -244,16 +303,4 @@ path {
         height: 1px;
         opacity: 0;
     }
-}
-
-.text {
-    font-family: Helvetica, 'Helvetica Neue', sans-serif;
-    letter-spacing: 1px;
-    text-align: center;
-    margin-left: -43px;
-    font-weight: bold;
-    margin-top: 20px;
-    font-size: 11px;
-    color: #a0a0a0;
-    width: 200px;
 }

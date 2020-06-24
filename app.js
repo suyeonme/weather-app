@@ -10,9 +10,9 @@ const DOMstring = {
     sunrise: document.querySelector('.weather-info__sunrise'),
     sunset: document.querySelector('.weather-info__sunset'),
     humidity: document.querySelector('.weather-info__humidity'),
-
     widget: document.querySelector('.widget'),
-    loader: document.querySelector('.preloader')
+    loader: document.querySelector('.preloader'),
+    checkbox: document.querySelector('.dark-mode__checkbox')
 };
 
 class Weather {
@@ -84,4 +84,10 @@ window.addEventListener('load', () => {
             }
         });
     };
+});
+
+DOMstring.checkbox.addEventListener('change', () => {
+
+    // Change the body to dark mode
+    document.body.classList.toggle('dark');
 });
